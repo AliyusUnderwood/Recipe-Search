@@ -3,93 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./assets/css/syle.css">
     <title>The Cook Book</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
-    <nav class="navbar has-background-black" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <div class="navbar-item">
-            <input type="text" placeholder="search">
-          </div>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a href="./index" class="navbar-item has-text-white">
-              Home
-            </a>
-      
-            <a href="./About.html" class="navbar-item has-text-white">
-              Quick Cooks
-            </a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link has-text-white">
-                More
-              </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Recipes
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-info">
-                  <strong>Sign up</strong>
-                </a>
-                <a class="button is-light">
-                  Log in
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    <h1 class="has-background-info has-text-centered has-text-light">
-        <strong>Chef Kitchen</strong>
+  <!-- Background Video -->
+  <div class="outer-container">
+    <div class="video-container">
+      <video src="assets/videos/Comp 1.mp4" autoplay loop muted></video>
+    </div>
+    <div class="overlay"></div>
+    <div class="video-txt">
+      <h1>Welcome</h1>
+      <p>Search a main ingredient to get the best recipes.</p>
+      <a href=""class="button">Start</a>
+    </div>
+  </div>
 
-    </h1>
-    <div class="columns">
-        <div class="column pt-6">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laboriosam perferendis veniam excepturi quia ipsum debitis veritatis voluptate consequatur animi labore placeat, blanditiis asperiores sint harum quas repellat iure in?</p>
-        </div>
-        <div class="column pt-6">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/XFlTnMxLEfs?si=54znDFHaogFoteNZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+<!-- Side Bar -->
+  <nav class="sidebar close">
+    <header>
+      <div>
+        <span class="title">Chef Kitchen</span>
       </div>
-      <footer class="footer has-background-info has-text-white">
-        <div class="content has-text-centered">
-          <p>
-            <strong>Chef Chef Kitchen</strong> by Aliyus Underwood, Jenna Flynn, Efrain Ruiz, and Bryon Fitzgerald. </a> The source code is licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC 4.0</a>.
-          </p>
-        </div>
-      </footer>
-    
+      <i class='bx bxs-chevron-right toggle'></i>
+    </header>
+    <div class="menu-bar">
+        <!-- Search Bar -->
+        <li class="search-box nav-links">
+            <i class='bx bx-search-alt bx-tada-hover'></i>
+            <input type="search" placeholder="Enter Main Ingredient">
+        </li>
+        <ul class="menu-links">
+          <!-- Nav Links -->
+          <li class="nav-links">
+            <a href="#">
+              <i class='bx bx-home-alt bx-tada-hover'></i>
+              <span class="text nav-text">Home</span>
+              </a>
+              </li>
+              <div class="dropdown">
+                <div class="select">
+                  <li class="nav-links">
+                    <a href="#">
+                      <i class='bx bx-knife bx-tada-hover' ></i>
+                      <span class="text nav-text selected">Quick Cooks</span>
+                      <i class='bx bxs-chevron-down drop' ></i>
+                      </a>
+                      <ul class="sub-menu">
+                        <li class="active"><a href="#">Chicken Breast</a></li>
+                        <li><a href="#">Salmon</a></li>
+                        <li><a href="#">Eggs</a></li>
+                        <li><a href="#">Ground Beef</a></li>
+                        <li><a href="#">Pork</a></li>
+                      </ul>
+                      </li>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+    </div>
+  </nav>  
 </body>
 <script
 src="https://code.jquery.com/jquery-3.5.1.min.js"

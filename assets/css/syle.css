@@ -1,0 +1,248 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* colors */
+    --prime: #E4E4DE;
+    --sec: #C4C5BA;
+    --tert: #595f39;
+    --dark: #1b1b1b;   
+
+    /* transitions */
+    --tran-02:all 0.2s ease;
+    --tran-03:all 0.3s ease;
+    --tran-04:all 0.4s ease;
+    --tran-05:all 0.5s ease;
+}
+
+body{
+    height: 100vh;
+    background: var(--sec);
+}
+
+/* Video */
+.outer-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video-txt {
+    position: absolute;
+    color: var(--prime);
+    line-height: 1.5;
+    text-align: center;
+}
+
+.overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--tert);
+    opacity: 0.5;
+}
+
+.button {
+    border: 2px solid var(--prime);
+    border-radius: 40px;
+    color: var(--prime);
+    font-size: 1.5em;
+    padding: .7em 1.2em;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: var(--tran-03);
+}
+
+ .video-txt a:hover {
+    background: var(--sec);
+    color: var(--tert);
+    border: 2px solid var(--sec);
+}
+
+.video-txt h1{
+    font-size: 2.5em;
+}
+
+.video-txt p{
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.sub-menu{
+    padding: 6px 6px 14px 80px;
+    margin-top: 245px;
+    margin-left: -217px;
+    list-style: none;
+    box-shadow: 0 0.5em 1em var(--tert);
+    border-radius: 20px;
+    background: var(--sec);
+    opacity: 0; 
+    display: none;
+    transition: var(--tran-02);
+}
+
+.sub-menu a{
+    color: var(--tert);
+    font-size: 16px;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+
+
+.select-clicked{
+    border: 2px var(--tert) solid;
+}
+
+.sub-menu-open{
+    display: block;
+    opacity: 1;
+}
+
+/* sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    opacity: 0.8;
+    background: var(--prime);
+    transition: var(--tran-04);
+}
+
+.sidebar.close{
+    width: 78px;
+    transition: var(--tran-04);
+}
+
+.sidebar.close .text {
+    opacity: 0;
+    transition: var(--tran-02);
+}
+
+.sidebar.close .drop{
+    opacity: 0;
+    transition: var(--tran-02);
+}
+
+.sidebar.close .title{
+    font-size: 16px;
+    transition: var(--tran-02);
+}
+
+.sidebar.close .search-box{
+    background: var(--prime);
+    transition: var(--tran-04);
+}
+
+.sidebar .nav-links{
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Icons */
+
+.sidebar .nav-links .bx{
+    font-size: 30px;
+    min-width: 60px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+}
+
+.sidebar .text{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--tert);
+}
+
+.sidebar .nav-links .bx,
+.sidebar .nav-links .text{
+    color: var(--tert);
+    transition: var(--tran-02);
+}
+
+
+.sidebar header{
+    display: flex;
+    position: relative;
+    align-items: center;
+    color: var(--tert);
+    font-size: 24px;
+}
+
+.sidebar header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    height: 25px;
+    width: 25px;
+    background: var(--tert);
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--prime);
+}
+
+.sidebar .search-box{
+    background: var(--sec);
+}
+
+.search-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background: var(--sec);
+}
+
+.sidebar .nav-links a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-05);
+}
+
+.sidebar .nav-links a:hover{
+    background: var(--tert);
+}
+
+.sidebar .nav-links a:hover .bx,
+.sidebar .nav-links a:hover .text,
+.sidebar .nav-links a:hover .sub-menu{
+    color: var(--prime);
+}
+
+@media screen and (max-width: 980px){
+    .video-txt{
+        padding-left: 115px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .video-txt{
+        padding-right: 40px;
+    }
+}
