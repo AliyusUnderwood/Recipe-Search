@@ -78,6 +78,8 @@ body{
     margin-bottom: 1em;
 }
 
+/* Drop-down menu */
+
 .sub-menu{
     padding: 6px 6px 14px 80px;
     margin-top: 245px;
@@ -89,6 +91,7 @@ body{
     opacity: 0; 
     display: none;
     transition: var(--tran-02);
+    z-index: 1;
 }
 
 .sub-menu a{
@@ -98,15 +101,18 @@ body{
     text-decoration: none;
 }
 
-
-
-.select-clicked{
-    border: 2px var(--tert) solid;
+.drop-rotate {
+    transform: rotate(180deg);
 }
 
 .sub-menu-open{
     display: block;
     opacity: 1;
+}
+
+.active {
+    background: var(--prime);
+    width: 100%;
 }
 
 /* sidebar */
