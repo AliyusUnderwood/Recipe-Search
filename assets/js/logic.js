@@ -68,6 +68,23 @@ function getMealRecipe(stop) {
   }
 }
 
+//Local Storage
+var userInput = document.querySelector("#ingredientInput");
+var ingredients = JSON.parse(localStorage.getItem("ingredients")) || []; 
+
+// Set the input field value (if any)
+userInput.value = ingredients.join(", "); 
+
+searchBttn.addEventListener("click", function() {
+    const inputValue = userInput.value.trim(); 
+    if (inputValue !== "") {
+        ingredients.push(inputValue); 
+        localStorage.setItem("ingredients", JSON.stringify(ingredients)); 
+        userInput.value = "";
+    }
+});
+
+
 //Modal
 function mealRecipeModal(meal){
   console.log(meal);

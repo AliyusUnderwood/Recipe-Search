@@ -16,7 +16,7 @@ toggle.addEventListener("click", () =>{
 });
 
 homeBtn.addEventListener("click", () => {
-    backgroundVideo.classList.remove("hideVideo");
+    backgroundVideo.classList.toggle("hideVideo");
     mealDetails.classList.remove("showContain");
     sidebar.classList.add("close");
   })
