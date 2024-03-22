@@ -1,10 +1,8 @@
 //Document Grabbers
 const searchBttn = document.getElementById("search-btn");
-const homeBtn = document.getElementById("home-btn");
 const mealList = document.getElementById("meal");
 const mealDetailsContent = document.querySelector(".meal-details-content");
 const recipeCloseBtn = document.getElementById("recipe-close-btn");
-const quickMeals = document.querySelectorAll(".sub-menu li")
 
 //Event Listeners
 searchBttn.addEventListener("click", getMealList);

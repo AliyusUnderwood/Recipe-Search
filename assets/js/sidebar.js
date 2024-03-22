@@ -1,11 +1,14 @@
-const body = document.querySelector("body")
-const sidebar = body.querySelector(".sidebar")
-const toggle = body.querySelector(".toggle")
-const searchBtn = body.querySelector(".seach-box")
-const dropdowns = document.querySelectorAll(".dropdown")
-const start = body.querySelector(".button")
+//Document grabbers
+const body = document.querySelector("body");
+const sidebar = body.querySelector(".sidebar");
+const toggle = body.querySelector(".toggle");
+const searchBtn = body.querySelector(".seach-box");
+const start = body.querySelector(".button");
+const dropdowns = document.querySelectorAll(".dropdown");
+const homeBtn = document.getElementById("home-btn");
 const backgroundVideo = document.querySelector(".outer-container");
 const mealDetails = document.querySelector(".contain");
+const quickMeals = document.querySelectorAll(".sub-menu li");
 
 // Event listeners
 toggle.addEventListener("click", () =>{
@@ -25,10 +28,7 @@ start.addEventListener("click", (event) =>{
 
 quickMeals.forEach(quickMeal => {
     quickMeal.addEventListener("click",dropDownMeals);
-    quickMeals.forEach(quickMeal => {
-        backgroundVideo.classList.remove("hideVideo");
-        mealDetails.classList.remove("showContain");
-    });
+    
   });
 
 // Sub-menu close and open.
@@ -58,13 +58,17 @@ dropdowns.forEach(dropdown => {
     });
 });
 
+//quick cooks dropdown search
 function dropDownMeals(){
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${quickMeals}`)
-    .then(response => response.json())
+  const mealList = document.getElementById('meal');
+
+     quickkMeals.forEach(meal => {
+    const ingredient = meal.textContent.trim();
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
+      .then(response => response.json())
       .then(data => {
-        let html = `<h2 class = "food-res">Recipes With ${quickMeals}:</h2>`;
+        let html = `<h2 class="food-res">Recipes With ${ingredient}:</h2>`;
         if (data.meals) {
-          const mealList = document.getElementById('meal');
           data.meals.forEach(meal => {
             html += `
               <div id="meal">
@@ -82,13 +86,14 @@ function dropDownMeals(){
           });
           mealList.classList.remove("notFound");
         } else {
-          html = "Sorry, we didn't find any meals!";
+          html = `<p>Sorry, we didn't find any meals with ${ingredient}!</p>`;
           mealList.classList.add("notFound");
         }
-        mealList.innerHTML = html;
+        mealList.innerHTML += html;
       })
       .catch(error => {
-        console.error('Error fetching meal data:', error);
+        console.error(`Error fetching meal data for ${ingredient}:`, error);
       });
-  }
+  });
+}
 
