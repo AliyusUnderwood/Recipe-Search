@@ -16,7 +16,7 @@ toggle.addEventListener("click", () =>{
 });
 
 homeBtn.addEventListener("click", () => {
-    backgroundVideo.classList.toggle("hideVideo");
+    backgroundVideo.classList.remove("hideVideo");
     mealDetails.classList.remove("showContain");
     sidebar.classList.add("close");
   })
@@ -62,7 +62,7 @@ dropdowns.forEach(dropdown => {
 function dropDownMeals(){
   const mealList = document.getElementById('meal');
 
-     quickkMeals.forEach(meal => {
+     quickMeals.forEach(meal => {
     const ingredient = meal.textContent.trim();
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
       .then(response => response.json())
